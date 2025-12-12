@@ -67,6 +67,10 @@ pip install psutil flask
 - Taille totale par extension (GB)
 - Catégorie “OTHER” pour les extensions non reconnues
 - Classement et affichage des **5 plus gros fichiers**
+### Capture d'ecran
+<img width="787" height="156" alt="image" src="https://github.com/user-attachments/assets/cb201577-0294-425d-9b72-57dd0d85d799" />
+<img width="1205" height="676" alt="image" src="https://github.com/user-attachments/assets/357d096c-cdaa-4f8b-8fc6-483fe0926dae" />
+<img width="1193" height="650" alt="image" src="https://github.com/user-attachments/assets/b06115bd-2557-4d91-ba64-475d0d78e88f" />
 
 ###  Interface HTML
 - Dashboard généré via un template `template.html`
