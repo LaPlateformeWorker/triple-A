@@ -23,7 +23,6 @@ Clonez le dépôt puis installez les dépendances :
 ```bash
 pip install psutil flask
 
-pip install psutil flask
 ```
 
 ## Fonctionnalités
