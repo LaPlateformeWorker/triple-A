@@ -1,0 +1,300 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #031435;
+    color: white;
+    text-align: center;
+}
+
+
+.logo img {
+    height: 180px;
+    margin: 15px;
+    
+}
+
+.title {
+    font-size: 0.9em;   
+}
+.title p {
+    font-size: 0.9  em;
+    color: #dcdcdc;
+}
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #748b91;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+    justify-content: center;
+}
+
+section {
+    background-color: rgb(208, 211, 241);
+    border-radius: 12px;
+    box-shadow: 0 6px 15px #0000001a;
+    padding: 25px;
+    flex: 1 1 350px;
+    min-height: 200px;
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-3px);
+}
+
+
+section h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+section ul {
+    list-style: none;
+    padding: 0;
+}
+
+section li {
+    padding: 5px 0;
+    border-bottom:#000000 1px solid;
+}
+
+#system_info {
+    display: flex;
+    flex-direction: column;
+}
+
+#system_info .info-group {
+    margin-bottom: 10px;
+}
+
+.usage-level-green {
+    --level-color: #0d6a34;
+}
+
+.usage-level-orange {
+    --level-color: #e29212;
+}
+
+.usage-level-red {
+    --level-color: #a31f10;
+}
+
+.progress-bar-container {
+    background-color: #ecf0f1;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 5px 0 15px;
+}
+
+.progress-bar {
+    height: 20px;
+    color: white;
+    text-align: center;
+    line-height: 20px;
+    font-size: 0.85em;
+    font-weight: bold;
+    background-color: var(--level-color, #3498db);
+    transition: width 0.5s ease-in-out;
+}
+
+#per-core-usage p {
+
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+#per-core-usage .usage-level-green,
+#per-core-usage .usage-level-orange,
+#per-core-usage .usage-level-red {
+
+    font-weight: bold;
+    color: var(--level-color);
+}
+
+
+
+.gauge-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.gauge {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 10px;
+    font-size: 1.8em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gauge[style*="--p"] {
+
+    background:
+        radial-gradient(closest-side, white 85%, transparent 85% 100%),
+        conic-gradient(var(--gc) calc(var(--p) * 1%), #eee 0);
+}
+
+
+section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 0.95em;
+}
+
+section th,
+section td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+section th {
+    background-color: #237178;
+    color: white;
+    font-weight: 600;
+}
+
+section tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+
+#processus td,
+#fichiers td {
+    font-weight: bold;
+}
+
+#processus .usage-level-green,
+#processus .usage-level-orange,
+#processus .usage-level-red {
+    color: var(--level-color);
+}
+
+
+.largest-files-list {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.largest-files-list p {
+    margin-bottom: 5px;
+    padding: 3px 0;
+    border-bottom: 1px dotted #e0e0e0;
+}
+
+.largest-files-list p:last-child {
+    border-bottom: none;
+}
+
+
+footer {
+    background-color: #031435;
+    color: #bdc3c7;
+    text-align: center;
+    padding: 15px 20px;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+
+
+
+@media (max-width: 600px) {
+    * {
+            max-width: 100%;
+            height: auto;
+        }
+
+    header {
+        flex-direction: column;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .logo img {
+        height: 100px;
+        margin: 0 0 10px 0;
+    }
+    main {
+        padding: 10px;
+        width: 100%;
+        overflow-x: hidden;
+    }
+    
+    section {
+        flex: 1 1 100% ;
+        min-width: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 20px;
+    }
+
+    #processus table,
+    #fichiers table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    .title h1 {
+        font-size: 1.5em;
+    }
+
+    .title p {
+        font-size: 0.8em;
+    }
+
+    
+}
+
+@media (max-width: 600px) {
+
+    #processus th:nth-child(1),
+    #processus td:nth-child(1) {
+        display: none;
+    }
+
+    section table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    section li,
+    .largest-files-list p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+}

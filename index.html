@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="30">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Triple A - Monitoring Dashboard</title>
+    <link rel="stylesheet" href="template.css">
+    </head>
+
+<body>
+    <header>
+        <div class="logo">
+        <img src="logo.png" alt="logo du site"></div>
+        <div class="title">
+        <h1>Tableau de Bord de Monitorng Système (Challenge AAA)</h1>
+        <p>Dernière mise à jour : <strong>2025-12-12 09:54:37</strong><br>
+        Surveillance en temps réel des ressources de la VM Ubuntu.</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="system_info">
+            <h2>Informations Système & Réseau</h2>
+            <div class="info-group">
+                <h3>Système</h3>
+                <ul>
+                    <li><strong>Nom d'hôte :</strong> DESKTOP-QKVE3U1</li>
+                    <li><strong>Système d'exploitation :</strong> Windows 11</li>
+                    <li><strong>Heure de démarrage :</strong> 2025-12-12 09:00:33</li>
+                    <li><strong>Temps de fonctionnement (Uptime) :</strong> 0:54:03</li>
+                    <li><strong>Utilisateurs connectés :</strong> 1</li>
+                </ul>
+            </div>
+
+
+            <div class="info-group">
+                <h3>Réseau & Charge (Avancé)</h3>
+                <ul>
+                    <li><strong>Adresse IP principale :</strong> 10.10.1.249</li>
+                    <li><strong>Charge Système (1m / 5m / 15m) :</strong> N/A% / N/A% / N/A%</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="cpu-info">
+            <h2>Utilisation du CPU :</h2>
+            <ul>
+                <li><strong>Nombre de coeurs :</strong> 4</li>
+                <li><strong>Fréquence actuelle :</strong> 1105.0 MHz</li>
+            </ul>
+            <div class="meter-group">
+                <p><strong>Utilisation Totale :</strong></p>
+                <div class="progress-bar-container">
+                    <div class="progress-bar usage-level-green">
+                        11.7%
+                    </div>
+                </div>
+            </div>
+            <div class="core-usage">
+                <p><strong>Utilisation par Coeur :</strong></p>
+                <p>Coeur 0: <span role="progressbar" aria-valuenow="31.6" aria-valuemin="0" aria-valuemax="100" aria-label="Utilisation Coeur 0" class="usage-level-green">31.6%</span></p><p>Coeur 1: <span role="progressbar" aria-valuenow="7.1" aria-valuemin="0" aria-valuemax="100" aria-label="Utilisation Coeur 1" class="usage-level-green">7.1%</span></p><p>Coeur 2: <span role="progressbar" aria-valuenow="17.3" aria-valuemin="0" aria-valuemax="100" aria-label="Utilisation Coeur 2" class="usage-level-green">17.3%</span></p><p>Coeur 3: <span role="progressbar" aria-valuenow="8.2" aria-valuemin="0" aria-valuemax="100" aria-label="Utilisation Coeur 3" class="usage-level-green">8.2%</span></p>
+            </div>
+        </section>
+
+        <section class="memory-info">
+            <h2>Utilisation de la Mémoire :</h2>
+            <ul>
+                <li><strong>Mémoire Totale :</strong> 23.88 GB</li>
+                <li><strong>Mémoire Utilisée :</strong> 9.03 GB</li>
+                <li><strong>Mémoire Libre :</strong> 37.8 GB</li>
+            </ul>
+            <div class="meter-group">
+                <p><strong>Utilisation de la Mémoire :</strong></p>
+                <div class="progress-bar-container">
+                    <div class="progress-bar usage-level-green">
+                        37.8%
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="process-info">
+            <h2>Top 3 des Processus Actifs (CPU / RAM) :</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>PID</th>
+                        <th>Nom du Processus</th>
+                        <th>CPU (%)</th>
+                        <th>RAM (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>10000</td><td>vmware-vmx.exe</td><td class="usage-level-green">0.0%</td><td class="usage-level-green">9.6%</td></tr><tr><td>2556</td><td>Code.exe</td><td class="usage-level-green">0.0%</td><td class="usage-level-green">2.0%</td></tr><tr><td>5880</td><td>mksSandbox.exe</td><td class="usage-level-green">0.0%</td><td class="usage-level-green">1.7%</td></tr>
+                </tbody>
+            </table>
+            </section>
+
+        <section class="fichiers">
+            <h2>Analyse du Système de Fichiers : C:\Users\Ecole</h2>
+            <p>Analyse Récursive : Oui | Extensions suivies : 10 +
+                autres</p>
+            
+            <h3>Statistiques par Extension :</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Extension</th>
+                        <th>Nombre de Fichiers</th>
+                        <th>Pourcentage du Total</th>
+                        <th>Espace Disque Occupé (GB)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>.txt</td><td>948</td><td>1.23%</td><td>0.04 GB</td></tr><tr><td>.py</td><td>4446</td><td>5.77%</td><td>0.07 GB</td></tr><tr><td>.pdf</td><td>7</td><td>0.01%</td><td>0.0 GB</td></tr><tr><td>.jpg</td><td>65</td><td>0.08%</td><td>0.02 GB</td></tr><tr><td>.png</td><td>1364</td><td>1.77%</td><td>0.08 GB</td></tr><tr><td>.html</td><td>1537</td><td>2.0%</td><td>0.12 GB</td></tr><tr><td>.css</td><td>296</td><td>0.38%</td><td>0.0 GB</td></tr><tr><td>.js</td><td>8575</td><td>11.13%</td><td>0.63 GB</td></tr><tr><td>.log</td><td>677</td><td>0.88%</td><td>0.07 GB</td></tr><tr><td>.zip</td><td>18</td><td>0.02%</td><td>0.29 GB</td></tr><tr><td>OTHER</td><td>59104</td><td>76.72%</td><td>95.77 GB</td></tr>
+                </tbody>
+            </table>
+            
+            <h3>Top 5 des Fichiers les Plus Volumineux :</h3>
+            <div class="largest-files-list">
+                <p>1. <strong>26200.6584.250915-1905.25h2_ge_release_svc_refresh_CLIENT_CONSUMER_x64FRE_fr-fr.iso</strong> (7.21 GB)</p><p>2. <strong>ubuntu-24.04.3-desktop-amd64.iso</strong> (5.91 GB)</p><p>3. <strong>564dcdc4-4056-ff57-322a-94d3059f3467.vmem</strong> (4.0 GB)</p><p>4. <strong>Windows 11 x64 (6)-s001.vmdk</strong> (3.97 GB)</p><p>5. <strong>Windows 11 x64 (6)-s002.vmdk</strong> (3.97 GB)</p>
+            </div>
+            </section>
+    </main>
+
+    
+    <footer>
+        <p>Projet créé par :<br> Emanuel PLACINTA<br>Cylia OULD AMARA<br>Ugo RODRIGUEZ<br><br></p>
+        <p>&copy; 2025 Challenge Triple A - Monitoring Dashboard. Tous droits réservés.</p>
+    </footer>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

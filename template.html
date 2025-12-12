@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="30">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Triple A - Monitoring Dashboard</title>
+    <link rel="stylesheet" href="template.css">
+    </head>
+
+<body>
+    <header>
+        <div class="logo">
+        <img src="logo.png" alt="logo du site"></div>
+        <div class="title">
+        <h1>Tableau de Bord de Monitorng Système (Challenge AAA)</h1>
+        <p>Dernière mise à jour : <strong>{{ timestamp }}</strong><br>
+        Surveillance en temps réel des ressources de la VM Ubuntu.</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="system_info">
+            <h2>Informations Système & Réseau</h2>
+            <div class="info-group">
+                <h3>Système</h3>
+                <ul>
+                    <li><strong>Nom d'hôte :</strong> {{ system_hostname }}</li>
+                    <li><strong>Système d'exploitation :</strong> {{ system_os }}</li>
+                    <li><strong>Heure de démarrage :</strong> {{ system_boot_time }}</li>
+                    <li><strong>Temps de fonctionnement (Uptime) :</strong> {{ system_uptime }}</li>
+                    <li><strong>Utilisateurs connectés :</strong> {{ system_user_count }}</li>
+                </ul>
+            </div>
+
+
+            <div class="info-group">
+                <h3>Réseau & Charge (Avancé)</h3>
+                <ul>
+                    <li><strong>Adresse IP principale :</strong> {{ network_ip_address }}</li>
+                    <li><strong>Charge Système (1m / 5m / 15m) :</strong> {{ load_average_1m }}% / {{ load_average_5m }}% / {{ load_average_15m }}%</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="cpu-info">
+            <h2>Utilisation du CPU :</h2>
+            <ul>
+                <li><strong>Nombre de coeurs :</strong> {{ cpu_core_count }}</li>
+                <li><strong>Fréquence actuelle :</strong> {{ cpu_current_freq }} MHz</li>
+            </ul>
+            <div class="meter-group">
+                <p><strong>Utilisation Totale :</strong></p>
+                <div class="progress-bar-container">
+                    <div class="progress-bar usage-level-{{ cpu_usage_color }}">
+                        {{ cpu_percent_usage }}%
+                    </div>
+                </div>
+            </div>
+            <div class="core-usage">
+                <p><strong>Utilisation par Coeur :</strong></p>
+                {{ cpu_core_usage_list | safe }}
+            </div>
+        </section>
+
+        <section class="memory-info">
+            <h2>Utilisation de la Mémoire :</h2>
+            <ul>
+                <li><strong>Mémoire Totale :</strong> {{ ram_total_gb }} GB</li>
+                <li><strong>Mémoire Utilisée :</strong> {{ ram_used_gb }} GB</li>
+                <li><strong>Mémoire Libre :</strong> {{ ram_percent_usage }} GB</li>
+            </ul>
+            <div class="meter-group">
+                <p><strong>Utilisation de la Mémoire :</strong></p>
+                <div class="progress-bar-container">
+                    <div class="progress-bar usage-level-{{ ram_usage_color }}">
+                        {{ ram_percent_usage }}%
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="process-info">
+            <h2>Top 3 des Processus Actifs (CPU / RAM) :</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>PID</th>
+                        <th>Nom du Processus</th>
+                        <th>CPU (%)</th>
+                        <th>RAM (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{ top_process_rows | safe }}
+                </tbody>
+            </table>
+            </section>
+
+        <section class="fichiers">
+            <h2>Analyse du Système de Fichiers : {{ file_scan_directory }}</h2>
+            <p>Analyse Récursive : {{ recursive_status }} | Extensions suivies : {{ file_extension_count }} +
+                autres</p>
+            
+            <h3>Statistiques par Extension :</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Extension</th>
+                        <th>Nombre de Fichiers</th>
+                        <th>Pourcentage du Total</th>
+                        <th>Espace Disque Occupé (GB)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{ file_stats_rows | safe }}
+                </tbody>
+            </table>
+            
+            <h3>Top 5 des Fichiers les Plus Volumineux :</h3>
+            <div class="largest-files-list">
+                {{ largest_files_list | safe }}
+            </div>
+            </section>
+    </main>
+
+    
+    <footer>
+        <p>Projet créé par :<br> Emanuel PLACINTA<br>Cylia OULD AMARA<br>Ugo RODRIGUEZ<br><br></p>
+        <p>&copy; 2025 Challenge Triple A - Monitoring Dashboard. Tous droits réservés.</p>
+    </footer>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
